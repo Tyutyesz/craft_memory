@@ -1,0 +1,38 @@
+/*VARIABLES*/
+
+/*Colors*/
+
+$orange: #fe5e00;
+$purple: #c22de1;
+$red: #f64562;
+$dark1: #202136;
+$dark2: #27273f;
+$white: #ffffff;
+$grey: #eeeeee;
+$grey_dark: #555555;
+$black: #000000;
+
+$primaryColor: $orange;
+$secondaryColor: $purple;
+$tertiaryColor: $red;
+
+
+/*Typography*/
+$FF_Regular: 'OpenSans-Regular', Arial, Helvetica, sans-serif;
+$FF_Bold: 'OpenSans-Bold', Arial, Helvetica, sans-serif;
+$FF_XBold: 'OpenSans-ExtraBold', Arial, Helvetica, sans-serif;
+
+
+/*Borders*/
+$Radius_Default: 8px;
+
+/*Animation*/
+$fast: .125s;
+$normal: .250s;
+$slow: .375s;
+
+/*Shadow*/
+$shadow: -1px 10px 10px -9px rgba(0,0,0,0.44);
+
+/*Gradient Background*/
+$linear-bg1: linear-gradient(45deg, $secondaryColor 0%, $tertiaryColor 50%, $primaryColor 100%);
