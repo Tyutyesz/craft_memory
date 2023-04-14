@@ -35,4 +35,11 @@ $slow: .375s;
 $shadow: -1px 10px 10px -9px rgba(0,0,0,0.44);
 
 /*Gradient Background*/
-$linear-bg1: linear-gradient(45deg, $secondaryColor 0%, $tertiaryColor 50%, $primaryColor 100%);
+$linear-bg1: linear-gradient(135deg, $secondaryColor 0%, $tertiaryColor 50%, $primaryColor 100%);
+
+/*Helpers*/
+$headerHeight: 80px;
+
+/*Animation*/
+$fast: .25s;
+$slow: 1s;

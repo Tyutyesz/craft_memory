@@ -1,6 +1,114 @@
-
-h1{
-  color: $primaryColor;
+body{
+  height: 100dvh;
+  background-color: $dark2;
+}
+header{
+  height: $headerHeight;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h3{
+  font-size: 1.5rem;
+  color: $white;
   font-family: $FF_Bold;
-  font-size: 30px;
+}
+main{
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(5, 100px);
+  width: max-content;
+  margin: 32px auto;
+}
+
+.card{
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+  width: 100px;
+  border-radius: $Radius_Default;
+  position: relative;
+  background-color: $dark1;
+  background-size: cover;
+  opacity:1;
+  transition: opacity $slow linear;
+  &:before{
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    transform-origin: center;
+    background: $linear-bg1;
+    border-radius: $Radius_Default;
+    z-index: -1;
+    opacity: 1;
+    transition:
+            width $fast ease-out,
+            height $fast ease-out,
+            left $fast ease-out,
+            top $fast ease-out,
+            opacity $fast ease-out;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    background: $linear-bg1;
+    border-radius: $Radius_Default;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity $fast ease-out;
+  }
+  &:hover{
+    &:before{
+      top: -4px;
+      left: -4px;
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+      opacity: 0;
+    }
+    &:after{
+      opacity: 1;
+    }
+  }
+
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity:0;
+    transition: opacity $fast linear;
+    pointer-events: none;
+    tab-index: -1;
+    border-radius: $Radius_Default;
+  }
+  &.flipped{
+    img{
+      opacity:1;
+    }
+    &:after{
+      visibility: hidden;
+    }
+  }
+  &[data-cleared="true"]{
+    opacity:0;
+    pointer-events: none;
+    tab-index: -1;
+  }
+
+}
+
+@media screen and (max-width: 700px){
+  main{
+    grid-template-columns: repeat(4, 80px);
+    gap: 12px;
+  }
+  .card{
+    width: 80px;
+  }
 }
